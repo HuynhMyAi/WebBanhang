@@ -216,15 +216,15 @@
                                 <div class="col-md-6">
                                     <label for="inputCity" class="form-label">Giới
                                         tính</label>
-                                    <div class="form-check" name="gioitinh">
-                                        <input class="form-check-input" type="radio" name="nam" id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" value="nam" id="flexRadioDefault1">
+                                        <label class="form-check-label" for="flexRadioDefault1" name="gioitinh">
                                             Nam
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="nu" id="flexRadioDefault2"
-                                            checked>
+                                        <input class="form-check-input" type="radio" value="nu" id="flexRadioDefault2"
+                                            checked name="gioitinh">
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Nữ
                                         </label>
@@ -269,9 +269,9 @@
                             <form class="row g-3 formdangky" action="dangnhap.php" method="POST">
                                 <h2>Đăng Nhập</h2>
                                 <div class="col-md-12">
-                                    <label for="inputNumberl4" class="form-label">Số
-                                        điện thoại<span class="error">*</span></label>
-                                    <input type="text" class="form-control" id="inputNumberl" name="sdt1">
+                                    <label for="inputNumberl4" class="form-label">Email<span
+                                            class="error">*</span></label>
+                                    <input type="text" class="form-control" id="inputNumberl" name="email">
                                 </div>
                                 <div class="col-md-12">
                                     <label for="inputPassword4" class="form-label">Mật

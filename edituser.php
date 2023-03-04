@@ -10,7 +10,14 @@ if ($conn->connect_error) {
 }
 
  session_start();
+/*
+$date = $_SESSION["ngaysinh"]; // Ngày tháng đầu vào
+$newDate = date("d-m-Y", strtotime($date)); // Chuyển đổi sang định dạng mới
+ // Hiển thị kết quả
+ echo $newDate;
 
+ echo '<input type="date" name="ngay" value="'.$_SESSION["ngaysinh"].'">';
+ */
 ?>
 
 <!DOCTYPE html>
@@ -150,7 +157,7 @@ if ($conn->connect_error) {
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span
-                                class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
+                                class="text-primary font-weight-bold border px-3 mr-1">H A</span>Shop</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -183,22 +190,23 @@ if ($conn->connect_error) {
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Tên</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput2"
-                                        placeholder="<?php echo $_SESSION["name"] ?>" name="ten">
+                                        value="<?php echo $_SESSION["name"] ?>" name="ten">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Số điện thoại </label>
                                     <input type="text" class="form-control" id="exampleFormControlInput3"
-                                        placeholder=" <?php echo $_SESSION["sdt"] ?>" name="sdt">
+                                        value=" <?php echo $_SESSION["sdt"] ?>" name="sdt">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Nhập mật khẩu mới</label>
                                     <input type="password" class="form-control" id="exampleFormControlInput1"
-                                        name="psw">
+                                        value="<?php $_SESSION["matkhau"] ?>" name="psw">
+
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Nhập lại mật khẩu</label>
                                     <input type="password" class="form-control" id="exampleFormControlInput1"
-                                        name="psw">
+                                        value="<?php $_SESSION["matkhau"] ?>" name="psw1">
                                 </div>
                             </div>
 
@@ -206,26 +214,26 @@ if ($conn->connect_error) {
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Email </label>
                                     <input type="email" class="form-control" id="exampleFormControlInput3"
-                                        placeholder=" <?php echo $_SESSION["email"] ?>" name="email">
+                                        value=" <?php echo $_SESSION["email"] ?>" name="email">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Ngày sinh</label>
                                     <input type="date" class="form-control" id="exampleFormControlInput4"
-                                        placeholder="<?php echo $_SESSION["ngaysinh"] ?>" name="ngaysinh">
+                                        value="<?php echo $_SESSION["ngaysinh"]?>" name="ngaysinh">
                                 </div>
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Giới tính</label>
 
-                                    <div class="form-check" name="gioitinh">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="gioitinh"
+                                            id="flexRadioDefault1" value="nam">
                                         <label class="form-check-label" for="flexRadioDefault1">
                                             Nam
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault2" checked>
+                                        <input class="form-check-input" type="radio" name="gioitinh"
+                                            id="flexRadioDefault2" checked value="nu">
                                         <label class="form-check-label" for="flexRadioDefault2">
                                             Nữ
                                         </label>
@@ -236,7 +244,7 @@ if ($conn->connect_error) {
                                 <div class="mb-3">
                                     <label for="exampleFormControlInput1" class="form-label">Địa chỉ</label>
                                     <input type="text" class="form-control" id="exampleFormControlInput1"
-                                        placeholder=" <?php echo $_SESSION["diachi"] ?>" name="diachi">
+                                        value=" <?php echo $_SESSION["diachi"] ?>" name="diachi">
                                 </div>
                             </div>
                         </div>

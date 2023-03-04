@@ -9,24 +9,26 @@
                 }
                 if(isset($_POST["sb1"])){
                     
-                    $sql="SELECT * FROM khach_hang where sdt='".$_POST["sdt1"]."' AND matkhau='".$_POST["psw1"]."'";
+                    $sql="SELECT * FROM khach_hang where email='".$_POST["email"]."' AND matkhau='".md5($_POST["psw1"])."'";
                     $result1 = $conn->query($sql);
-                   print_r($result1);
+                  // print_r($result1);
                     if($result1->num_rows>0){
                         $row = $result1->fetch_assoc();
                         header('Location: indexuser.php');
 
                         session_start();
-                        $_SESSION["name"] = $row["KH_TEN"];
-                        $_SESSION["ngaysinh"]=$row["KH_NGAYSINH"];
-                        $_SESSION["email"]=$row["KH_EMAIL"];
+                        $_SESSION["name"] = $row["HOTEN"];
+                        $_SESSION["ngaysinh"]=$row["NGAYSINH"];
+                        $_SESSION["email"]=$row["EMAIL"];
                         $_SESSION["sdt"]=$row["SDT"];
-                        $_SESSION["diachi"]=$row["KH_DIACHI"];
+                        $_SESSION["diachi"]=$row["DIACHI"];
+                        $_SESSION["matkhau"]=$row["MATKHAU"];
 /*
                         echo $_SESSION["name"]."<br>==";
                         echo $_SESSION["ngaysinh"]."<br>==";
                         echo $_SESSION["sdt"];
-    */
+                        
+    */ 
                     }
                     else{
                         echo '<script language="javascript">

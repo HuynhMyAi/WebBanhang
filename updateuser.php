@@ -7,9 +7,9 @@
                 if ($conn->connect_error) {
                   die("Connection failed: " . $conn->connect_error);
                 }
-                session_start();
+               
                 if(isset($_POST["sbf"])){
-                    
+                    session_start();
                    if($_POST["psw"]==$_POST["psw1"]){
                     $sql=" UPDATE khach_hang SET matkhau='".md5($_POST["psw"])."',HOTEN='".$_POST["ten"]."',NGAYSINH='".$_POST["ngaysinh"]."',
                     GIOITINH='".$_POST["gioitinh"]."',SDT='".$_POST["sdt"]."',EMAIL='".$_POST["email"]."',DIACHI='".$_POST["diachi"]."' WHERE email='".$_SESSION["email"]."'

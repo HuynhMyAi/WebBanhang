@@ -1,3 +1,7 @@
+<?php
+include("conn&ss.php");
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,15 +28,6 @@
 
     <!-- Customized Bootstrap Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
-    <link href="css/style1.css" rel="stylesheet">
-
-    <link rel="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" href="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous">
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD" crossorigin="anonymous">
-    </script>
 </head>
 
 <body>
@@ -138,7 +133,7 @@
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span
-                                class="text-primary font-weight-bold border px-3 mr-1">H A</span>Shop</h1>
+                                class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -156,12 +151,30 @@
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Liên Hệ Shop</a>
                         </div>
-                        <div class="navbar-nav ml-auto py-0">
-
-                            <a href="taikhoan.php" class="nav-item nav-link">Đăng Ký</a>
-                            <a href="taikhoan.php" class="nav-item nav-link">Đăng Nhập</a>
-                        </div>
-
+                        <!--phan trang-->
+                        <?php
+                            
+                            if (isset($_SESSION['email'])) {
+                                echo '
+                                <div class="navbar-nav ml-auto py-0">
+                                     <a href="dangxuat.php" class="nav-item nav-link">Đăng Xuất</a>
+                                     <a href="edituser.php" class="nav-item nav-link"><i class="fas fa-user-circle"></i></a>
+                                 </div>
+                                ';
+       
+                             } else {
+                                echo '
+                                <div class="navbar-nav ml-auto py-0">
+        
+                                <a href="taikhoan.php" class="nav-item nav-link">Đăng Ký</a>
+                                <a href="taikhoan.php" class="nav-item nav-link">Đăng Nhập</a>
+                            </div>
+                                ';
+                             }
+                            
+                        ?>
+                        <!--kt phan trang -->
+                    </div>
                 </nav>
                 <div id="header-carousel" class="carousel slide" data-ride="carousel">
                     <div class="carousel-inner">
@@ -401,328 +414,7 @@
     <!-- Products End -->
 
 
-    <!-- Products Start -->
-    <div class="container-fluid pt-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Đơn Giản</span></h2>
-        </div>
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-8.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Products End -->
-    <!-- Products Start -->
-    <div class="container-fluid pt-5">
-        <div class="text-center mb-4">
-            <h2 class="section-title px-5"><span class="px-2">Thiết Kế</span></h2>
-        </div>
-        <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-1.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-2.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-3.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-4.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-5.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-6.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-7.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-12 pb-1">
-                <div class="card product-item border-0 mb-4">
-                    <div class="card-header product-img position-relative overflow-hidden bg-transparent border p-0">
-                        <img class="img-fluid w-100" src="img/product-8.jpg" alt="">
-                    </div>
-                    <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
-                        <h6 class="text-truncate mb-3">Colorful Stylish Shirt</h6>
-                        <div class="d-flex justify-content-center">
-                            <h6>$123.00</h6>
-                            <h6 class="text-muted ml-2"><del>$123.00</del></h6>
-                        </div>
-                    </div>
-                    <div class="card-footer d-flex justify-content-between bg-light border">
-                        <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>Xem </a>
-                        <a href="" class="btn btn-sm text-dark p-0"><i
-                                class="fas fa-shopping-cart text-primary mr-1"></i>Thêm Vào Giỏ</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- Products End -->
+
 
     <!-- Vendor Start -->
     <div class="container-fluid py-5">
@@ -761,104 +453,9 @@
 
 
     <!-- Footer Start -->
-    <div class="container-fluid bg-secondary text-dark mt-5 pt-5">
-        <div class="row px-xl-5 pt-5">
-            <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-                <a href="" class="text-decoration-none">
-                    <h1 class="mb-4 display-5 font-weight-semi-bold"><span
-                            class="text-primary font-weight-bold border border-white px-3 mr-1">H A</span>Shop</h1>
-                </a>
-                <p>Giấy chứng nhận đăng ký doanh nghiệp số: 031530999, đăng ký lần đầu ngày 18/06/2018.</p>
-                <p class="mb-2"><i class="fa fa-map-marker-alt text-primary mr-3"></i>123 Trần Quang Khải, Ninh Kiều,
-                    CT.</p>
-                <p class="mb-2"><i class="fa fa-envelope text-primary mr-3"></i>Huynhai@gmail.com</p>
-                <p class="mb-0"><i class="fa fa-phone-alt text-primary mr-3"></i>090807601</p>
-            </div>
-            <div class="col-lg-8 col-md-12">
-                <div class="row">
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Đi Đến Trang</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Trang
-                                Chủ</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Đăng
-                                Nhập</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Đăng
-                                Ký</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Liên Hệ
-                                Shop</a>
-                            <a class="text-dark mb-2" href="checkout.html"><i class="fa fa-angle-right mr-2"></i>Giỏ
-                                Hàng</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Trang Cá
-                                Nhân</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Chi Nhánh</h5>
-                        <div class="d-flex flex-column justify-content-start">
-                            <a class="text-dark mb-2" href="index.html"><i class="fa fa-angle-right mr-2"></i>Cần
-                                Thơ</a>
-                            <a class="text-dark mb-2" href="shop.html"><i class="fa fa-angle-right mr-2"></i>Sài Gòn</a>
-                            <a class="text-dark mb-2" href="detail.html"><i class="fa fa-angle-right mr-2"></i>Đà
-                                Nẵng</a>
-                            <a class="text-dark mb-2" href="cart.html"><i class="fa fa-angle-right mr-2"></i>Hải
-                                Phòng</a>
-                            <a class="text-dark mb-2" href="checkout.html"><i
-                                    class="fa fa-angle-right mr-2"></i>Vinh</a>
-                            <a class="text-dark" href="contact.html"><i class="fa fa-angle-right mr-2"></i>Hà Nội</a>
-                        </div>
-                    </div>
-                    <div class="col-md-4 mb-5">
-                        <h5 class="font-weight-bold text-dark mb-4">Đăng Ký Nhận Tin</h5>
-                        <form action="">
-                            <div class="form-group">
-                                <input type="text" class="form-control border-0 py-4" placeholder="Họ Tên"
-                                    required="required" />
-                            </div>
-                            <div class="form-group">
-                                <input type="email" class="form-control border-0 py-4" placeholder="Email"
-                                    required="required" />
-                            </div>
-                            <div>
-                                <button class="btn btn-primary btn-block border-0 py-3" type="submit">Đăng ký</button>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row border-top border-light mx-xl-5 py-4">
-            <div class="col-md-6 px-xl-0">
-                <p class="mb-md-0 text-center text-md-left text-dark">
-                    &copy; <a class="text-dark font-weight-semi-bold" href="#">H A SHOP </a>. Thiết Kế Bởi
-                    <a class="text-dark font-weight-semi-bold" href="https://htmlcodex.com">Huỳnh Thị Mỹ Ái</a><br>
-                    <a href="https://themewagon.com" target="_blank">Huỳnh Thị Mỹ Ái</a>
-                </p>
-            </div>
-            <div class="col-md-6 px-xl-0 text-center text-md-right">
-                <img class="img-fluid" src="img/payments.png" alt="">
-            </div>
-        </div>
-    </div>
-    <!-- Footer End -->
-
-
-    <!-- Back to Top -->
-    <a href="#" class="btn btn-primary back-to-top"><i class="fa fa-angle-double-up"></i></a>
-
-
-    <!-- JavaScript Libraries -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-    <script src="lib/easing/easing.min.js"></script>
-    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
-
-    <!-- Contact Javascript File -->
-    <script src="mail/jqBootstrapValidation.min.js"></script>
-    <script src="mail/contact.js"></script>
-
-    <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <?php
+    include("footer.php")
+    ?>
 </body>
 
 </html>

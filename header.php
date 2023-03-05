@@ -1,7 +1,6 @@
 <?php
 include("conn&ss.php");
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -74,10 +73,9 @@ include("conn&ss.php");
         <div class="row align-items-center py-3 px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a href="" class="text-decoration-none">
-                    <h4 class="m-0 display-5 font-weight-semi-bold"><span
-                            class="text-primary font-weight-bold border px-3 mr-1"><i class="fas fa-user-circle"></i>
-                    </h4>
-                    </span> <?php echo $_SESSION["name"] ?>
+                    <h1 class="m-0 display-5 font-weight-semi-bold"><span
+                            class="text-primary font-weight-bold border px-3 mr-1"><i
+                                class="fas fa-user-circle"></i></span>H T M A</h1>
                 </a>
             </div>
             <div class="col-lg-6 col-6 text-left">
@@ -108,30 +106,36 @@ include("conn&ss.php");
 
 
     <!-- Navbar Start -->
-    <div class="container-fluid mb-5">
+    <!-- Navbar Start -->
+    <div class="container-fluid">
         <div class="row border-top px-xl-5">
             <div class="col-lg-3 d-none d-lg-block">
                 <a class="btn shadow-none d-flex align-items-center justify-content-between bg-primary text-white w-100"
                     data-toggle="collapse" href="#navbar-vertical"
                     style="height: 65px; margin-top: -1px; padding: 0 30px;">
-                    <h6 class="m-0">Tài Khoản Của Tôi</h6>
+                    <h6 class="m-0">Categories</h6>
                     <i class="fa fa-angle-down text-dark"></i>
                 </a>
-                <nav class="collapse show navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0"
-                    id="navbar-vertical">
+                <nav class="collapse position-absolute navbar navbar-vertical navbar-light align-items-start p-0 border border-top-0 border-bottom-0 bg-light"
+                    id="navbar-vertical" style="width: calc(100% - 30px); z-index: 1;">
                     <div class="navbar-nav w-100 overflow-hidden" style="height: 410px">
                         <div class="nav-item dropdown">
-                            <a href="#" class="nav-link" data-toggle="dropdown">Hồ sơ <i
+                            <a href="#" class="nav-link" data-toggle="dropdown">Áo thun <i
                                     class="fa fa-angle-down float-right mt-1"></i></a>
                             <div class="dropdown-menu position-absolute bg-secondary border-0 rounded-0 w-100 m-0">
-                                <a href="" class="dropdown-item">Địa Chỉ</a>
-                                <a href="" class="dropdown-item">Số điện Thoại</a>
-                                <a href="" class="dropdown-item">Đổi Mật Khẩu</a>
+                                <a href="" class="dropdown-item">Áo thun nam</a>
+                                <a href="" class="dropdown-item">Áo thun nữ</a>
+                                <a href="" class="dropdown-item">Áo trẻ em</a>
                             </div>
                         </div>
-                        <a href="" class="nav-item nav-link">Đơn Mua</a>
-                        <a href="" class="nav-item nav-link">Thông Báo</a>
-                        <a href="" class="nav-item nav-link">Giỏ Hàng</a>
+                        <a href="" class="nav-item nav-link">Đầm</a>
+                        <a href="" class="nav-item nav-link">Jeans Nữ</a>
+                        <a href="" class="nav-item nav-link">Áo khoác</a>
+                        <a href="" class="nav-item nav-link">Áo sơ mi nữ</a>
+                        <a href="" class="nav-item nav-link">Áo croptop</a>
+                        <a href="" class="nav-item nav-link">Áo len</a>
+                        <a href="" class="nav-item nav-link">Váy</a>
+                        <a href="" class="nav-item nav-link">Áo liền quần</a>
                     </div>
                 </nav>
             </div>
@@ -139,7 +143,7 @@ include("conn&ss.php");
                 <nav class="navbar navbar-expand-lg bg-light navbar-light py-3 py-lg-0 px-0">
                     <a href="" class="text-decoration-none d-block d-lg-none">
                         <h1 class="m-0 display-5 font-weight-semi-bold"><span
-                                class="text-primary font-weight-bold border px-3 mr-1">H A</span>Shop</h1>
+                                class="text-primary font-weight-bold border px-3 mr-1">E</span>Shopper</h1>
                     </a>
                     <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon"></span>
@@ -151,8 +155,8 @@ include("conn&ss.php");
                             <div class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" data-toggle="dropdown">Phong Cách</a>
                                 <div class="dropdown-menu rounded-0 m-0">
-                                    <a href="cart.html" class="dropdown-item">Đơn giản</a>
-                                    <a href="checkout.html" class="dropdown-item">Thiết kế</a>
+                                    <a href="#" class="dropdown-item">Đơn giản</a>
+                                    <a href="#" class="dropdown-item">Thiết kế</a>
                                 </div>
                             </div>
                             <a href="contact.php" class="nav-item nav-link">Liên Hệ Shop</a>
@@ -180,90 +184,24 @@ include("conn&ss.php");
                         ?>
                     </div>
                 </nav>
-                <!-- hien thi thong tin nguoi dung-->
-
-                <div class="container">
-                    <form action="updateuser.php" method="POST" class="formuser">
-                        <h2>Thông tin tài khoản</h2>
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Tên</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput2"
-                                        value="<?php echo $_SESSION["name"] ?>" name="ten">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Số điện thoại </label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput3"
-                                        value=" <?php echo $_SESSION["sdt"] ?>" name="sdt">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Nhập mật khẩu mới</label>
-                                    <input type="password" class="form-control" id="exampleFormControlInput1"
-                                        value="<?php $_SESSION["matkhau"] ?>" name="psw">
-
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Nhập lại mật khẩu</label>
-                                    <input type="password" class="form-control" id="exampleFormControlInput1"
-                                        value="<?php $_SESSION["matkhau"] ?>" name="psw1">
-                                </div>
-                            </div>
-
-                            <div class="col-6">
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Email </label>
-                                    <input type="email" class="form-control" id="exampleFormControlInput3"
-                                        value=" <?php echo $_SESSION["email"] ?>" name="email">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Ngày sinh</label>
-                                    <input type="date" class="form-control" id="exampleFormControlInput4"
-                                        value="<?php echo $_SESSION["ngaysinh"]?>" name="ngaysinh">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Giới tính</label>
-
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gioitinh"
-                                            id="flexRadioDefault1" value="nam">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            Nam
-                                        </label>
-                                    </div>
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="gioitinh"
-                                            id="flexRadioDefault2" checked value="nu">
-                                        <label class="form-check-label" for="flexRadioDefault2">
-                                            Nữ
-                                        </label>
-                                    </div>
-
-                                </div>
-
-                                <div class="mb-3">
-                                    <label for="exampleFormControlInput1" class="form-label">Địa chỉ</label>
-                                    <input type="text" class="form-control" id="exampleFormControlInput1"
-                                        value=" <?php echo $_SESSION["diachi"] ?>" name="diachi">
-                                </div>
-                            </div>
-                        </div>
-                        <input type="submit" value="Lưu" class="saveform" name="sbf">
-                    </form>
-                </div>
-
-                <!-- ket thuc hien thi thong tin nguoi dung-->
-
             </div>
         </div>
     </div>
     <!-- Navbar End -->
+    <!-- Navbar End -->
 
-
-    <!-- Footer Start -->
-    <?php
-    include("footer.php")
-    ?>
+    <!-- Page Header Start -->
+    <div class="container-fluid bg-secondary mb-5">
+        <div class="d-flex flex-column align-items-center justify-content-center" style="min-height: 300px">
+            <h1 class="font-weight-semi-bold text-uppercase mb-3">Contact Us</h1>
+            <div class="d-inline-flex">
+                <p class="m-0"><a href="">Home</a></p>
+                <p class="m-0 px-2">-</p>
+                <p class="m-0">Contact</p>
+            </div>
+        </div>
+    </div>
+    <!-- Page Header End -->
 </body>
 
 </html>

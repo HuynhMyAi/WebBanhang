@@ -1,12 +1,5 @@
 <?php
-                $servername = "localhost";
-                $username = "root";
-                $password = "";
-                $dbname = "qlbanquanao";
-                $conn = new mysqli($servername, $username, $password, $dbname);
-                if ($conn->connect_error) {
-                  die("Connection failed: " . $conn->connect_error);
-                }
+           include("conn&ss.php");
                 if(isset($_POST["sb"])){
                     //echo $_POST["sdt"]."<br>";
                     $sql1="SELECT * FROM khach_hang where email='".$_POST["email"]."' ";
